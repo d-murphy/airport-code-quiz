@@ -10,9 +10,11 @@ function App() {
       <GameControl />
       <br/>
       <br/>
-      <ApCodeInput /> <ApCodeInput /> <ApCodeInput />
+      <div className="codeInput">
+        <ApCodeInput />&nbsp;&nbsp;<ApCodeInput />&nbsp;&nbsp;<ApCodeInput />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default App
