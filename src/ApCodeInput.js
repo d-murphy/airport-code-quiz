@@ -17,7 +17,7 @@ class ApCodeInput extends React.Component {
       alert('A name was submitted: ' + this.state.value);
       event.preventDefault();
     }
-  
+    
     render() {
       return (
         <form onSubmit={this.handleSubmit}>

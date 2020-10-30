@@ -6,3 +6,7 @@ textarea {
   text-align: center;
   background: #dddddd;
 }
+
+.codeInput {
+  display: flex;
+}
