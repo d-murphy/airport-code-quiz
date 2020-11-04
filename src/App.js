@@ -33,9 +33,9 @@ function GameStage(props) {
                         updateStageProp={props.updateStage} />;
   }
   return (<div class="codeInput">
-            <ApCodeInput activeLetter={props.activeLetter} thisLetter={1}/>
-            <ApCodeInput activeLetter={props.activeLetter} thisLetter={2}/>
-            <ApCodeInput activeLetter={props.activeLetter} thisLetter={3}/>
+            <ApCodeInput activeLetter={props.activeLetter} thisLetter={1} saveAnswer = {props.saveAnswer} />
+            <ApCodeInput activeLetter={props.activeLetter} thisLetter={2} saveAnswer = {props.saveAnswer} />
+            <ApCodeInput activeLetter={props.activeLetter} thisLetter={3} saveAnswer = {props.saveAnswer} />
           </div>
   )
 }
@@ -48,16 +48,42 @@ class App extends React.Component {
       gameStatus: 'SelectPool', 
       gamePool: 'USTop50',
       questionNum: 0,
-      letterEntry: 1
+      letterEntry: 1,
+      currentGame: currentGame,
+      currentAnswers: [],
+      currentAnswer: ""
     }; 
     this.updatePool = this.updatePool.bind(this);
     this.logState = this.logState.bind(this);
+    this.saveAnswer = this.saveAnswer.bind(this);
   }
 
   updatePool(event) {
     this.setState({gamePool: event.target.value, 
                    gameStatus: "gameStage"});
   }
+
+  saveAnswer(event) {
+
+    if(this.state.letterEntry == 1 ) {
+      this.setState({
+        currentAnswer:  event.target.value.toUpperCase(), 
+        letterEntry: this.state.letterEntry + 1
+      }) 
+    } else if(this.state.letterEntry < 3) {
+      this.setState({
+        currentAnswer: this.state.currentAnswer + event.target.value.toUpperCase(), 
+        letterEntry: this.state.letterEntry + 1
+      }) 
+    } else {
+      this.setState({
+        currentAnswer: this.state.currentAnswer + event.target.value.toUpperCase(), 
+        letterEntry:  1,
+        currentAnswers: this.state.currentAnswers.push(this.state.currentAnswer), 
+        questionNum: this.state.questionNum + 1
+    });
+  }
+}
 
 
   logState(){
@@ -71,7 +97,8 @@ class App extends React.Component {
       <h1>Do you know your Airport Codes?</h1>
       <GameStage gameStatus={this.state.gameStatus} 
         updatePoolProp = {this.updatePool} 
-        activeLetter = {this.state.letterEntry} />
+        activeLetter = {this.state.letterEntry} 
+        saveAnswer = {this.saveAnswer} />
       <br/>
       <br/>
       <div onClick={this.logState}>Click to Log State</div>  

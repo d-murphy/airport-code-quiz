@@ -22,3 +22,11 @@ textarea {
   text-align: center;
   background: #dddddd;
 }
+
+.gameControl {
+
+ 
+  transition:
+    opacity 2s 2s,
+    transform 2 0.5s;
+}

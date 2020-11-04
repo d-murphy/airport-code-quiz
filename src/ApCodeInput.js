@@ -5,14 +5,14 @@ class ApCodeInput extends React.Component {
       if(this.props.activeLetter == this.props.thisLetter){
         return (
           <div class="codeEntry">
-            <form onSubmit={this.handleSubmit}>
-              <textarea />
+            <form >
+              <textarea onChange={this.props.saveAnswer} maxlength="1"  />
             </form>
           </div>
         )} else {
           return(
           <div class="codeEntryDisabled">
-            <form onSubmit={this.handleSubmit}>
+            <form >
               <textarea disabled/>
             </form>
           </div>

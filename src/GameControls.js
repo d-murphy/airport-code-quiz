@@ -3,7 +3,7 @@ import React from 'react';
 class GameControl extends React.Component {
     render() {
       return (
-        <div>
+        <div class="gameControl">
           <p>To start the game, first select which group of airports you want to use:</p>
           <form onSubmit={this.props.updatePoolProp}>
             <label>
