@@ -1,31 +1,25 @@
 import React from 'react';
 
 class ApCodeInput extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {};
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-  
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
-  
-    handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
-    
     render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
-          <textarea value={this.state.value} onChange={this.handleChange} disabled/>
-        </form>
+      if(this.props.activeLetter == this.props.thisLetter){
+        return (
+          <div class="codeEntry">
+            <form onSubmit={this.handleSubmit}>
+              <textarea />
+            </form>
+          </div>
+        )} else {
+          return(
+          <div class="codeEntryDisabled">
+            <form onSubmit={this.handleSubmit}>
+              <textarea disabled/>
+            </form>
+          </div>
+            
+          )}
 
-      );
-    }
+        }
   }
 
   export default ApCodeInput; 

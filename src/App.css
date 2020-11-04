@@ -1,5 +1,13 @@
 textarea {
   resize: none;
+}
+
+.codeInput {
+  display: flex;
+}
+
+.codeEntry {
+  padding: 5px;
   border: 0;
   border-bottom: 3px solid red;
   outline: 0;
@@ -7,6 +15,10 @@ textarea {
   background: #dddddd;
 }
 
-.codeInput {
-  display: flex;
+.codeEntryDisabled {
+  padding: 5px;
+  border: 0;
+  outline: 0;
+  text-align: center;
+  background: #dddddd;
 }
