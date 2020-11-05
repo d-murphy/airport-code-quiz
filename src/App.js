@@ -51,7 +51,8 @@ class App extends React.Component {
       letterEntry: 1,
       currentGame: currentGame,
       currentAnswers: [],
-      currentAnswer: ""
+      currentAnswer: "",
+      currentLetters: []
     }; 
     this.updatePool = this.updatePool.bind(this);
     this.logState = this.logState.bind(this);
@@ -63,27 +64,33 @@ class App extends React.Component {
                    gameStatus: "gameStage"});
   }
 
+
+
   saveAnswer(event) {
 
     if(this.state.letterEntry == 1 ) {
       this.setState({
         currentAnswer:  event.target.value.toUpperCase(), 
-        letterEntry: this.state.letterEntry + 1
+        letterEntry: this.state.letterEntry + 1,
+//        currentLetters: [...this.state.currentLetters, event.target.value.toUpperCase()]
       }) 
     } else if(this.state.letterEntry < 3) {
       this.setState({
         currentAnswer: this.state.currentAnswer + event.target.value.toUpperCase(), 
-        letterEntry: this.state.letterEntry + 1
+        letterEntry: this.state.letterEntry + 1,
+//        currentLetters: [...this.state.currentLetters, event.target.value.toUpperCase()]
       }) 
     } else {
       this.setState((state) => {
 
-        const newAnswerArr = [...this.state.currentAnswers, this.state.currentAnswer]; 
+        const newAnswerArr = [...this.state.currentAnswers, this.state.currentAnswer + event.target.value.toUpperCase()]; 
+
         return {
-          currentAnswer: this.state.currentAnswer + event.target.value.toUpperCase(), 
           letterEntry:  1,
+          currentAnswer: "", // Not necessary, but nice
           currentAnswers: newAnswerArr, 
-          questionNum: this.state.questionNum + 1
+          questionNum: this.state.questionNum + 1, 
+//          currentLetters: []
         }
     });
   }
