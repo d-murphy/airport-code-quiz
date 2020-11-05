@@ -76,11 +76,15 @@ class App extends React.Component {
         letterEntry: this.state.letterEntry + 1
       }) 
     } else {
-      this.setState({
-        currentAnswer: this.state.currentAnswer + event.target.value.toUpperCase(), 
-        letterEntry:  1,
-        currentAnswers: this.state.currentAnswers.push(this.state.currentAnswer), 
-        questionNum: this.state.questionNum + 1
+      this.setState((state) => {
+
+        const newAnswerArr = [...this.state.currentAnswers, this.state.currentAnswer]; 
+        return {
+          currentAnswer: this.state.currentAnswer + event.target.value.toUpperCase(), 
+          letterEntry:  1,
+          currentAnswers: newAnswerArr, 
+          questionNum: this.state.questionNum + 1
+        }
     });
   }
 }
