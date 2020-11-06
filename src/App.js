@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import GameControl from './GameControls';
 import ApCodeInput from './ApCodeInput';
-import data from  './data.json'
+import data from  './data.json';
+import AirportName from './AiportName';
 
 
 var dataPositionsToInclude = [];
@@ -30,11 +31,19 @@ for(var i = 0; i<10; i++){
 
     const letterInput = props.letterInput;
     return (
-      letterInput.map((letter, key) =>
-        <ApCodeInput activeLetter={props.activeLetter} thisLetter={letter.letterNum}
-                    saveAnswer = {props.saveAnswer} 
-                    currentLetter = {letter.currentLetter} />
-      )
+      <div>
+      <AirportName questions={props.questions} QuestionNum={props.questionNum}/>   
+
+        <div class="codeInput">
+
+          {letterInput.map((letter, key) =>
+            <ApCodeInput activeLetter={props.activeLetter} thisLetter={letter.letterNum}
+                        saveAnswer = {props.saveAnswer} 
+                        currentLetter = {letter.currentLetter} />
+          )}
+        </div>
+      </div>
+
     )}
 
 const blankForm = [{letterNum: 0, currentLetter: ""},
@@ -72,7 +81,8 @@ class App extends React.Component {
       
       const letterFormCtrl = this.state.letterInput.map((item, index) => 
                                                       {if(index===this.state.letterEntry){
-                                                        return({letterNum: index, currentLetter: event.target.value})
+                                                        return({letterNum: index, 
+                                                                currentLetter: event.target.value.toUpperCase()})
                                                       } else {
                                                         return(item)
                                                       }
@@ -87,7 +97,8 @@ class App extends React.Component {
       this.setState({
         letterEntry: 0,
         letterInput: blankForm,
-        currentAnswers: [...this.state.currentAnswers, threeLetterAnswer]        
+        currentAnswers: [...this.state.currentAnswers, threeLetterAnswer], 
+        questionNum: this.state.questionNum + 1 
       }) 
     }      
   }
@@ -106,7 +117,9 @@ class App extends React.Component {
           updatePoolProp = {this.updatePool} 
           activeLetter = {this.state.letterEntry} 
           saveAnswer = {this.saveAnswer} 
-          letterInput = {this.state.letterInput} />
+          letterInput = {this.state.letterInput} 
+          questions = {this.state.currentGame}
+          questionNum = {this.state.questionNum} />
       </div>
       <br/>
       <br/>
