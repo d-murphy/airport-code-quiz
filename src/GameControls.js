@@ -4,18 +4,9 @@ class GameControl extends React.Component {
     render() {
       return (
         <div class="gameControl">
-          <p>To start the game, first select which group of airports you want to use:</p>
+          <p></p>
           <form onSubmit={this.props.updatePoolProp}>
-            <label>
-              Which airports to test?:
-              <select name="type" > 
-                <option value="All">All</option>
-                <option value="Top50Worldwide">Top 50 Worldwide</option>
-                <option value="USOnly">US Only</option>
-                <option value="Top50US">Top 50 US</option>
-              </select>
-            </label>
-            <input type="submit" value="Submit" />
+            <button>Go !</button>
           </form>
         </div>
 
