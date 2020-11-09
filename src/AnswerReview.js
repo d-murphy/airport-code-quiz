@@ -15,8 +15,12 @@ class AnswerReview extends React.Component {
     }
     return(
         <div>
-            hang on
             <table>
+            <tr>
+              <th>Airport</th>
+              <th>Airport Code</th>
+              <th>Your Guess</th>
+            </tr>
             {answerNum.map((answerNum) =>
               <tr>
                 <td>{questions[answerNum].AirportName}</td>

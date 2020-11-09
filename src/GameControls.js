@@ -6,7 +6,7 @@ class GameControl extends React.Component {
         <div class="gameControl">
           <p></p>
           <form onSubmit={this.props.updatePoolProp}>
-            <button>Go !</button>
+            <button class="button">Start the Quiz!</button>
           </form>
         </div>
 

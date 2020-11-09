@@ -40,20 +40,26 @@ for(var i = 0; i<10; i++){
                           saveAnswer = {props.saveAnswer} 
                           currentLetter = {letter.currentLetter} />
             )}
-            <CorrectTotal correctAnswers = {props.correctAnswers}
-                          questionNum = {props.questionNum} />
-
           </div>
+          <div class="correctTotal">
+            <CorrectTotal correctAnswers = {props.correctAnswers}
+                            questionNum = {props.questionNum} />
+          </div>
+
         </div>
       )
     } else {
       return (
       <div>
-        <p>Game over!</p>
-        <CorrectTotal correctAnswers = {props.correctAnswers}
-                          questionNum = {props.questionNum} />
-        <AnswerReview questions = {props.questions} 
-                      currentAnswers = {props.currentAnswers} />
+        <p>Quiz complete!</p>
+        <div class="correctTotal">
+          <CorrectTotal correctAnswers = {props.correctAnswers}
+                            questionNum = {props.questionNum} />
+        </div>
+        <div class="answerTable">
+          <AnswerReview questions = {props.questions} 
+                        currentAnswers = {props.currentAnswers} />
+        </div>
       </div>
       )
     }
@@ -143,9 +149,11 @@ class App extends React.Component {
           currentAnswers = {this.state.currentAnswers}
            />
       </div>
+{/*   
       <br/>
       <br/>
-      <div onClick={this.logState}>Click to Log State</div>  
+      <div class="LogStateBut" onClick={this.logState}>Log State</div>
+*/}  
     </div>
     )
   }
