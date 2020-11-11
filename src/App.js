@@ -38,7 +38,8 @@ for(var i = 0; i<10; i++){
             {letterInput.map((letter, key) =>
               <ApCodeInput activeLetter={props.activeLetter} thisLetter={letter.letterNum}
                           saveAnswer = {props.saveAnswer} 
-                          currentLetter = {letter.currentLetter} />
+                          currentLetter = {letter.currentLetter} 
+              />
             )}
           </div>
           <div class="correctTotal">
@@ -92,7 +93,6 @@ class App extends React.Component {
   
 
   updatePool(event) {
-    console.log("test")
     this.setState({gameStatus: "gameStage"});
   }
 
