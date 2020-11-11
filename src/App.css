@@ -26,34 +26,34 @@
 
 textarea {
   resize: none;
+  width: 40px;
+  text-align: center;
 }
 
 .codeInput {
   display: flex;
+  justify-content: center;
   padding-bottom: 30px;
   padding-top: 30px;
+}
+
+.codeEntry {
+  padding: 2px;
+  border-bottom: 3px solid olivedrab;
+  text-align: center;
+  background: #dddddd;
+}
+
+.codeEntryDisabled {
+  padding: 2px;
+  text-align: center;
+  background: #dddddd;
 }
 
 .correctTotal {
   font-style: italic;
 }
 
-.codeEntry {
-  padding: 5px;
-  border: 0;
-  border-bottom: 3px solid olivedrab;
-  outline: 0;
-  text-align: center;
-  background: #dddddd;
-}
-
-.codeEntryDisabled {
-  padding: 5px;
-  border: 0;
-  outline: 0;
-  text-align: center;
-  background: #dddddd;
-}
 
 .answerTable {
   padding-top: 20px;

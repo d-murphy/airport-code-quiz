@@ -9,14 +9,14 @@ class ApCodeInput extends React.Component {
           <form >
             <textarea 
             onChange={this.props.saveAnswer} maxLength="1" autoFocus class="letterEntry" 
-            value = {this.props.currentLetter} />
+            value = {this.props.currentLetter}  />
           </form>
         </div>
       )} else {
         return(
         <div class="codeEntryDisabled" >
           <form >
-            <textarea disabled value = {this.props.currentLetter}/>
+            <textarea disabled value = {this.props.currentLetter} />
           </form>
         </div>
       )}
