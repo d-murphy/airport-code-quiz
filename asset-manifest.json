@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/airport-code-quiz/static/css/main.596b68c6.chunk.css",
+    "main.js": "/airport-code-quiz/static/js/main.869f4dcb.chunk.js",
+    "main.js.map": "/airport-code-quiz/static/js/main.869f4dcb.chunk.js.map",
+    "runtime-main.js": "/airport-code-quiz/static/js/runtime-main.4a60937b.js",
+    "runtime-main.js.map": "/airport-code-quiz/static/js/runtime-main.4a60937b.js.map",
+    "static/js/2.1e0b9f46.chunk.js": "/airport-code-quiz/static/js/2.1e0b9f46.chunk.js",
+    "static/js/2.1e0b9f46.chunk.js.map": "/airport-code-quiz/static/js/2.1e0b9f46.chunk.js.map",
+    "index.html": "/airport-code-quiz/index.html",
+    "static/css/main.596b68c6.chunk.css.map": "/airport-code-quiz/static/css/main.596b68c6.chunk.css.map",
+    "static/js/2.1e0b9f46.chunk.js.LICENSE.txt": "/airport-code-quiz/static/js/2.1e0b9f46.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4a60937b.js",
+    "static/js/2.1e0b9f46.chunk.js",
+    "static/css/main.596b68c6.chunk.css",
+    "static/js/main.869f4dcb.chunk.js"
+  ]
+}
